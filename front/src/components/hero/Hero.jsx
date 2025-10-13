@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="bg-[#202020]">
+    <div>
       <Image src={laptopIcon} alt="Laptop Icon" width={50} height={50} />
     </div>
   );
