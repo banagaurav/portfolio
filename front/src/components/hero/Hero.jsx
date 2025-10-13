@@ -84,40 +84,19 @@ const Hero = () => {
 
   return (
     <div style={{ minHeight: "250vh" }}>
-      {" "}
       {/* Reduced height since we only need one rotation */}
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-        }}
-      >
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
         <Image
           src={laptopIcon}
           alt="Laptop Icon"
           width={500}
           height={500}
-          style={{
-            transform: `rotate(${rotation}deg)`,
-            opacity: isVisible ? 1 : 0,
-            transition: "transform 0.1s ease-out",
-          }}
+          className={`transform transition duration-1000 ease-out ${
+            isVisible ? "" : "opacity-0"
+          }`}
+          style={{ transform: `rotate(${rotation}deg)` }}
         />
-        <p
-          style={{
-            marginTop: "20px",
-            color: "white",
-            background: "rgba(0,0,0,0.7)",
-            padding: "10px",
-            borderRadius: "5px",
-          }}
-        >
+        <p className="mt-5 px-4 py-2 bg-black bg-opacity-70 text-white rounded">
           Scroll Position: {scrollPosition}px | Rotation: {rotation.toFixed(1)}°
           | Progress: {Math.min((scrollPosition / 2000) * 100, 100).toFixed(1)}%
         </p>
