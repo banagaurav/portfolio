@@ -2,15 +2,55 @@
 import { memo, useEffect, useState } from "react";
 import laptopIcon from "@/assets/icons/laptop-icon.svg";
 import Image from "next/image";
+import Tools from "../tools/Tools";
+
+// Define the content for each hold position with actual components
+const holdContents = [
+  {
+    title: "Tools",
+    description: "Powerful tools for modern development",
+    component: <Tools />,
+  },
+  {
+    title: "Frontend",
+    description: "Discover what makes us different",
+    component: (
+      <div className="text-center p-6 bg-green-500 text-white rounded-lg">
+        Features Component
+      </div>
+    ),
+  },
+  {
+    title: "Database",
+    description: "Custom solutions for your business",
+    component: (
+      <div className="text-center p-6 bg-purple-500 text-white rounded-lg">
+        Solutions Component
+      </div>
+    ),
+  },
+  {
+    title: "Backend",
+    description: "Let's start your project today",
+    component: (
+      <div className="text-center p-6 bg-orange-500 text-white rounded-lg">
+        Contact Component
+      </div>
+    ),
+  },
+];
 
 const Hero = () => {
   const [rotation, setRotation] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [activeHoldIndex, setActiveHoldIndex] = useState(null);
+  const [contentTransition, setContentTransition] = useState({
+    isTransitioning: false,
+    direction: "in", // 'in' or 'out'
+  });
 
-  // Define the hold positions (in degrees)
   const holdPositions = [0, 90, 180, 270];
-  // Define the scroll range for each hold (in pixels)
   const holdScrollRange = 200;
 
   useEffect(() => {
@@ -18,23 +58,18 @@ const Hero = () => {
       const scrollY = window.scrollY;
       setScrollPosition(scrollY);
 
-      // Total scroll distance for one full rotation
-      const totalScrollDistance = 2000; // pixels for complete 0° to 360° rotation
-
-      // Calculate progress (0 to 1)
-      const progress = Math.min(scrollY / totalScrollDistance, 1); // Cap at 1
+      const totalScrollDistance = 2000;
+      const progress = Math.min(scrollY / totalScrollDistance, 1);
 
       let newRotation = 0;
+      let newActiveHoldIndex = null;
 
-      // If we've scrolled beyond the total distance, maintain smooth continuous rotation
       if (progress >= 1) {
-        // Continue rotating smoothly beyond 360°
         const extraScroll = scrollY - totalScrollDistance;
-        const extraProgress = extraScroll / totalScrollDistance; // Progress beyond 1
-        newRotation = 360 + extraProgress * 360; // Continue from 360°
+        const extraProgress = extraScroll / totalScrollDistance;
+        newRotation = 360 + extraProgress * 360;
       } else {
-        // Calculate which hold segment we're in
-        const segmentProgress = progress * 4; // Convert to 0-4 range for 4 segments
+        const segmentProgress = progress * 4;
         const holdIndex = Math.floor(segmentProgress);
         const segmentScroll =
           (progress * totalScrollDistance) % (totalScrollDistance / 4);
@@ -46,25 +81,40 @@ const Hero = () => {
         const currentScrollInSegment =
           holdIndex * (totalScrollDistance / 4) + segmentScroll;
 
-        // Check if we're in a hold position range
         if (
           currentScrollInSegment >= holdStart &&
           currentScrollInSegment <= holdEnd &&
           currentScrollInSegment <= totalScrollDistance
         ) {
-          // We're in a hold range - maintain the hold position
           newRotation = holdPositions[holdIndex % 4];
+          newActiveHoldIndex = holdIndex % 4;
         } else {
-          // Normal rotation - map progress to rotation
           newRotation = progress * 360;
+          newActiveHoldIndex = null;
         }
+      }
+
+      // Handle content transitions
+      if (newActiveHoldIndex !== activeHoldIndex) {
+        if (newActiveHoldIndex === null) {
+          // Starting to transition out
+          setContentTransition({ isTransitioning: true, direction: "out" });
+        } else {
+          // Starting to transition in
+          setContentTransition({ isTransitioning: true, direction: "in" });
+        }
+
+        // Set the new active index after a small delay for smooth transition
+        setTimeout(() => {
+          setActiveHoldIndex(newActiveHoldIndex);
+          setContentTransition({ isTransitioning: false, direction: "in" });
+        }, 300); // Match this with your CSS transition duration
       }
 
       setRotation(newRotation);
       setIsVisible(true);
     };
 
-    // Throttle scroll events for better performance
     let ticking = false;
     const throttledScroll = () => {
       if (!ticking) {
@@ -77,29 +127,79 @@ const Hero = () => {
     };
 
     window.addEventListener("scroll", throttledScroll, { passive: true });
-    handleScroll(); // Initial call
+    handleScroll();
 
     return () => window.removeEventListener("scroll", throttledScroll);
-  }, []);
+  }, [activeHoldIndex]);
+
+  // Get transition classes based on state
+  const getTransitionClasses = () => {
+    if (contentTransition.isTransitioning) {
+      if (contentTransition.direction === "out") {
+        return "opacity-0 scale-95 translate-y-4";
+      } else {
+        return "opacity-0 scale-95 -translate-y-4";
+      }
+    } else {
+      return "opacity-100 scale-100 translate-y-0";
+    }
+  };
 
   return (
     <div style={{ minHeight: "250vh" }}>
-      {/* Reduced height since we only need one rotation */}
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
         <Image
           src={laptopIcon}
           alt="Laptop Icon"
           width={425}
           height={425}
-          className={`transform transition duration-1000 ease-out ${
+          className={`transform transition-all duration-1000 ease-out ${
             isVisible ? "" : "opacity-0"
           }`}
           style={{ transform: `rotate(${rotation}deg)` }}
         />
-        <p className="mt-5 px-4 py-2 bg-black bg-opacity-70 text-white rounded">
-          Scroll Position: {scrollPosition}px | Rotation: {rotation.toFixed(1)}°
-          | Progress: {Math.min((scrollPosition / 2000) * 100, 100).toFixed(1)}%
-        </p>
+
+        {/* Content Display */}
+        <div className="mt-8 w-full max-w-4xl px-4">
+          <div className="min-h-[300px] flex items-center justify-center">
+            <div
+              className={`w-full transition-all duration-500 ease-in-out transform ${getTransitionClasses()}`}
+            >
+              {activeHoldIndex !== null ? (
+                <div>
+                  <div className="text-center mb-6">
+                    <h2 className="text-3xl font-bold text-gray-800 transition-all duration-500 ease-out">
+                      {holdContents[activeHoldIndex].title}
+                    </h2>
+                    <p className="text-xl text-gray-600 mt-2 transition-all duration-500 ease-out delay-100">
+                      {holdContents[activeHoldIndex].description}
+                    </p>
+                  </div>
+                  <div className="transition-all duration-500 ease-out delay-200">
+                    {holdContents[activeHoldIndex].component}
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <h3 className="text-2xl font-semibold text-gray-400 mb-2 transition-all duration-500 ease-out">
+                    Keep Scrolling
+                  </h3>
+                  <p className="text-gray-500 transition-all duration-500 ease-out delay-100">
+                    Discover more as you scroll through different sections
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Optional Debug Info - you can remove this in production */}
+        <div className="mt-4 px-4 py-2 bg-black bg-opacity-70 text-white rounded text-sm transition-all duration-300">
+          Section:{" "}
+          {activeHoldIndex !== null
+            ? holdContents[activeHoldIndex].title
+            : "Transitioning"}
+        </div>
       </div>
     </div>
   );
