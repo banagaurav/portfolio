@@ -1,4 +1,5 @@
 import { memo } from "react";
+import Link from "next/link";
 
 const FooterAboutMe = () => {
   return (
@@ -21,15 +22,18 @@ const FooterAboutMe = () => {
       >
         Resume :
       </p>
-      <p
-        style={{
-          fontFamily: "Noto Sans Georgian",
-          color: "#FFFFFF",
-          fontSize: "16px",
-        }}
-      >
-        Next-Page :
-      </p>
+      <Link href="/aboutMe">
+        <p
+          style={{
+            fontFamily: "Noto Sans Georgian",
+            color: "#FFFFFF",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+        >
+          Next-Page :
+        </p>
+      </Link>
     </div>
   );
 };

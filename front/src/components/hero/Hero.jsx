@@ -89,8 +89,8 @@ const Hero = () => {
         <Image
           src={laptopIcon}
           alt="Laptop Icon"
-          width={500}
-          height={500}
+          width={425}
+          height={425}
           className={`transform transition duration-1000 ease-out ${
             isVisible ? "" : "opacity-0"
           }`}
