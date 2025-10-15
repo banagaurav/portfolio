@@ -1,9 +1,12 @@
+import ProjectsSection from "@/components/projects-section/ProjectsSection";
+import ResumeSection from "@/components/resume-section/ResumeSection";
 import { memo } from "react";
 
 const Page = () => {
   return (
     <div>
-      <h2>Page</h2>
+      <ResumeSection />
+      <ProjectsSection />
     </div>
   );
 };

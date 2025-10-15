@@ -1,9 +1,9 @@
 import { memo } from "react";
 import Image from "next/image";
 
-import githubIcon from "@/assets/icons/github-icon.svg";
-import linkedInIcon from "@/assets/icons/linkedIn-icon.svg";
-import whatsAppIcon from "@/assets/icons/whatsApp-icon.svg";
+import githubIcon from "@/assets/icons/social-media/github-icon.svg";
+import linkedInIcon from "@/assets/icons/social-media/linkedIn-icon.svg";
+import whatsAppIcon from "@/assets/icons/social-media/whatsApp-icon.svg";
 
 const FooterMedias = () => {
   return (
