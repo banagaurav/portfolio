@@ -29,9 +29,8 @@ const ProjectsSection = () => {
                 color: "#FFFFFF",
               }}
             >
-              Here's a summary of my professional experience and educational
-              background. For a more detailed version, you can download my full
-              resume.
+              Here's a summary of my projects. For a more detailed version, you
+              can view the projects listed below.
             </p>
           </div>
         </div>
