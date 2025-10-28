@@ -8,7 +8,7 @@ import Pandas from "../../assets/icons/data/pandas-icon.svg";
 
 const DataSection = () => {
   return (
-    <div className="bg-red-400 flex ">
+    <div className="border border-gray-400 flex ">
       <div className="flex-1">
         <div className="flex flex-row items-center gap-4">
           <div className="flex flex-row items-center gap-4">
@@ -34,7 +34,7 @@ const DataSection = () => {
         </p>
       </div>
 
-      <div className="bg-red-400 flex ">
+      <div className=" flex ">
         <LaptopImage location={LOCATION.DATA} />
       </div>
     </div>

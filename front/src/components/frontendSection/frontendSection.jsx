@@ -12,7 +12,7 @@ import { LOCATION } from "@/app/constant";
 
 const FrontendSection = () => {
   return (
-    <div className="bg-red-400 flex ">
+    <div className="border border-gray-400 flex ">
       <div className="flex-1">
         <div className="grid grid-cols-2 grid-rows-3 gap-4">
           <div className="flex flex-row items-center">

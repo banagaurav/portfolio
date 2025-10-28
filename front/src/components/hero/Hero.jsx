@@ -7,7 +7,7 @@ import DatabaseSection from "../databaseSection/DatabaseSection";
 
 const Hero = () => {
   return (
-    <div className="bg-red-200 grid flex-row justify-center gap-10 py-20 px-20 flex-wrap  ">
+    <div className="border border-gray-400 grid flex-row justify-center gap-10 py-20 px-20 flex-wrap  ">
       <Tools />
       <FrontendSection />
       <DatabaseSection />

@@ -6,7 +6,7 @@ import LaptopImage from "../laptopImage";
 
 const Tools = () => {
   return (
-    <div className="bg-red-400 flex ">
+    <div className="border border-gray-400 flex ">
       <div className="flex-1">
         <div className="flex flex-row items-center gap-4">
           <Image src={Figma} alt="Figma.img" />

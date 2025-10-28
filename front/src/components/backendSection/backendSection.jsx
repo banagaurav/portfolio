@@ -7,7 +7,7 @@ import nestJs from "../../assets/icons/backend/nestJs-icon.svg";
 
 const BackendSection = () => {
   return (
-    <div className="bg-red-400 flex ">
+    <div className="border border-gray-400 flex ">
       <div className="flex-1">
         <div className="flex flex-row items-center gap-4">
           <Image src={dotent} alt="dotent.img" />
@@ -28,7 +28,7 @@ const BackendSection = () => {
         </p>
       </div>
 
-      <div className="bg-red-400 flex ">
+      <div className=" flex ">
         <LaptopImage location={LOCATION.BACKEND} />
       </div>
     </div>

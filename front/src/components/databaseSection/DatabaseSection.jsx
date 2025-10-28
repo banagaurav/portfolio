@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const DatabaseSection = () => {
   return (
-    <div className="bg-red-400 flex ">
+    <div className="border border-gray-400 flex ">
       <div className="flex-1">
         <div className="flex flex-row items-center gap-4">
           <Image src={Database} alt="PostgreSql.img" />
@@ -25,7 +25,7 @@ const DatabaseSection = () => {
         </p>
       </div>
 
-      <div className="bg-red-400 flex ">
+      <div className=" flex ">
         <LaptopImage location={LOCATION.DATABASE} />
       </div>
     </div>
