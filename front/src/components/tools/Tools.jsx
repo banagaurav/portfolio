@@ -14,28 +14,26 @@ const Tools = () => {
                <div className="p-3 bg-white/10 rounded-xl backdrop-blur-sm">
                   <Image src={Figma} alt="Figma Logo" width={48} height={48} />
                </div>
-               <h2 className="text-4xl font-bold tracking-wide text-figma">Figma</h2>
+               <h2 className="text-4xl font-bold tracking-wide text-[#F24E1E]">Figma</h2>
             </div>
 
             {/* Description */}
             <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
-               I use <span className="text-figma font-semibold">Figma</span> to design my projects before coding. It
+               I use <span className="text-[#F24E1E] font-semibold">Figma</span> to design my projects before coding. It
                helps me plan layouts, create prototypes, and establish a clear visual style. This blueprint phase
                ensures I build polished, user-friendly interfaces efficiently, with precise measurements and exportable
                assets.
             </p>
 
-            {/* Subtle Accent Line */}
-            <div className="w-24 h-[2px] bg-figma/70 rounded-full mt-4"></div>
+            {/* Accent Line */}
+            <div className="w-24 h-[2px] bg-[#F24E1E]/70 rounded-full mt-4"></div>
          </div>
 
          {/* Right Section */}
-         <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
-            <div className="relative">
-               <LaptopImage location={LOCATION.TOOLS} />
-               {/* Optional floating glow */}
-               <div className="absolute inset-0 blur-3xl bg-figma/20 rounded-3xl -z-10"></div>
-            </div>
+         <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0 relative">
+            <LaptopImage location={LOCATION.TOOLS} />
+            {/* Floating Glow */}
+            <div className="absolute inset-0 blur-3xl bg-[#F24E1E]/20 rounded-3xl -z-10"></div>
          </div>
       </section>
    );
