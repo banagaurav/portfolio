@@ -18,11 +18,15 @@ const LaptopImage = ({ location }) => {
   const LaptopImageSource = laptopImageMapping[location];
 
   return (
-    <div className="flex flex-row items-left gap-2">
+    <>
       {LaptopImageSource && (
-        <Image src={LaptopImageSource} alt={`${location} laptop`} />
+        <Image
+          className=" gap-2 w-100 "
+          src={LaptopImageSource}
+          alt={`${location} laptop`}
+        />
       )}
-    </div>
+    </>
   );
 };
 
