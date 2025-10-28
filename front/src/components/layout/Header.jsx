@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header() {
    return (
-      <header className="sticky top-0 w-full text-white py-4 z-50">
+      <header className="fixed top-0 left-0 w-full  text-white py-4 z-50 bg-blur-md">
          <div className="flex justify-center items-center space-x-10 text-lg">
             <span className="text-gray-300 cursor-pointer hover:text-white transition">Tools</span>
             <span className="text-gray-300 cursor-pointer hover:text-white transition">Frontend</span>

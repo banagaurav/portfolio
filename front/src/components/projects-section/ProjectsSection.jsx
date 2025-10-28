@@ -5,8 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // Example project images (replace with your own)
-import Project1 from "../../assets/projects/project1.jpg";
-import Project2 from "../../assets/projects/project2.jpg";
+import Project1 from "../../assets/icons/projects/project1.jpg";
+import Project2 from "../../assets/icons/projects/project2.jpg";
 
 
 const projects = [
