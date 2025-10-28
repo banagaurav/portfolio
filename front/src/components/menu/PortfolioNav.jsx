@@ -15,7 +15,7 @@ const PortfolioNav = () => {
 
    return (
       <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-50">
-         <div className="flex flex-col gap-2 bg-[hsl(var(--nav-bg))] p-3 rounded-2xl shadow-lg">
+         <div className="flex flex-col gap-2 bg-[hsl(var(--nav-bg))] p-3 rounded-2xl shadow-[0_0.5rem_1rem_0rem_rgb(255,255,255,0.1)]">
             <button
                onClick={() => scrollToSection("home")}
                className="h-12 w-12 rounded-xl hover:bg-[hsl(var(--nav-active-bg))] text-[hsl(var(--nav-item))] hover:text-[hsl(var(--nav-item-hover))] transition-all flex items-center justify-center"
