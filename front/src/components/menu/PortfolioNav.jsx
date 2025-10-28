@@ -25,7 +25,7 @@ const PortfolioNav = () => {
             </button>
 
             <button
-               onClick={() => scrollToSection("about")}
+               onClick={() => scrollToSection("resume")}
                className="h-10 px-4 rounded-xl bg-[hsl(var(--nav-active-bg))] hover:bg-[hsl(var(--nav-active-bg))]/80 text-[hsl(var(--nav-item-hover))] font-medium transition-all"
             >
                me
