@@ -9,7 +9,7 @@ import ProjectsSection from "../projects-section/ProjectsSection";
 
 const Hero = () => {
   return (
-    <div className="border border-gray-400 grid flex-row justify-center gap-10 py-20 px-20 flex-wrap  ">
+    <div className=" grid flex-row justify-center gap-10 py-20 px-20 flex-wrap  ">
       <Tools />
       <FrontendSection />
       <DatabaseSection />
