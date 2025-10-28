@@ -1,11 +1,27 @@
 import { memo } from "react";
 import Image from "next/image";
-import frontend from "@/assets/icons/laptop/frontend.svg";
+import toolsSvg from "@/assets/icons/laptop/tools.svg";
+import frontendSvg from "@/assets/icons/laptop/frontend.svg";
+import backendSvg from "@/assets/icons/laptop/backend.svg";
+import databaseSvg from "@/assets/icons/laptop/database.svg";
+import dataSvg from "@/assets/icons/laptop/data.svg";
 
-const LaptopImage = () => {
+const LaptopImage = ({ location }) => {
+  const laptopImageMapping = {
+    TOOLS: toolsSvg,
+    BACKEND: backendSvg,
+    DATABASE: databaseSvg,
+    FRONTEND: frontendSvg,
+    DATA: dataSvg,
+  };
+
+  const LaptopImageSource = laptopImageMapping[location];
+
   return (
     <div className="flex flex-row items-left gap-2">
-      <Image src={frontend} alt="frontend Laptop" />
+      {LaptopImageSource && (
+        <Image src={LaptopImageSource} alt={`${location} laptop`} />
+      )}
     </div>
   );
 };

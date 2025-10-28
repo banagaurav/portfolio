@@ -1,10 +1,18 @@
 import { memo } from "react";
-import Frontend from "../frontend/frontend";
+import FrontendSection from "../frontendSection/frontendSection";
+import BackendSection from "../backendSection/backendSection";
+import Tools from "../tools/Tools";
+import DataSection from "../dataSection/DataSection";
+import DatabaseSection from "../databaseSection/DatabaseSection";
 
 const Hero = () => {
   return (
     <>
-      <Frontend />
+      <Tools />
+      <FrontendSection />
+      <DatabaseSection />
+      <BackendSection />
+      <DataSection />
     </>
   );
 };
