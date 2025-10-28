@@ -4,6 +4,8 @@ import BackendSection from "../backendSection/backendSection";
 import Tools from "../tools/Tools";
 import DataSection from "../dataSection/DataSection";
 import DatabaseSection from "../databaseSection/DatabaseSection";
+import ResumeSection from "../resume-section/ResumeSection";
+import ProjectsSection from "../projects-section/ProjectsSection";
 
 const Hero = () => {
   return (
@@ -13,6 +15,9 @@ const Hero = () => {
       <DatabaseSection />
       <BackendSection />
       <DataSection />
+
+      <ResumeSection />
+      <ProjectsSection />
     </div>
   );
 };
