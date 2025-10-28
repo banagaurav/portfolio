@@ -24,14 +24,21 @@ const Hero = () => {
             </section>
 
             {/* About Section - You can place your tools/skills here */}
-            <section id="about">
+            <section id="tools">
                <Tools />
-               <FrontendSection />
-               <DatabaseSection />
+            </section>
+            <section id="frontend">       
+               <FrontendSection />   
+            </section>
+            <section id="backend">
                <BackendSection />
+            </section>
+            <section id="database">
+               <DatabaseSection />
+            </section>
+            <section id="data">
                <DataSection />
             </section>
-
             {/* Projects Section */}
             <section id="projects">
                <ProjectsSection />
