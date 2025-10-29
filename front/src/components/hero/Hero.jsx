@@ -7,7 +7,7 @@ import DataSection from "../dataSection/DataSection";
 import DatabaseSection from "../databaseSection/DatabaseSection";
 import ResumeSection from "../resume-section/ResumeSection";
 import ProjectsSection from "../projects-section/ProjectsSection";
-import PortfolioNav from "../menu/PortfolioNav"; // Import the nav
+import PortfolioNav from "../menu/PortfolioNav";
 import HeroSection from "./HeroSection";
 
 const Hero = () => {
