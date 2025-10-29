@@ -11,19 +11,19 @@ const FooterMedias = () => {
     {
       icon: githubIcon,
       alt: "GitHub Icon",
-      href: "https://github.com/banagaurav", // Replace with your GitHub URL
+      href: "https://github.com/banagaurav",
       tooltip: "Go to GitHub",
     },
     {
       icon: linkedInIcon,
       alt: "LinkedIn Icon",
-      href: "https://www.linkedin.com/in/gaurav-raj-bana/", // Replace with your LinkedIn URL
+      href: "https://www.linkedin.com/in/gaurav-raj-bana/",
       tooltip: "Go to LinkedIn",
     },
     {
       icon: whatsAppIcon,
       alt: "WhatsApp Icon",
-      href: "https://wa.me/9779804056965", // Replace with your WhatsApp URL
+      href: "https://wa.me/9779804056965",
       tooltip: "Go to WhatsApp",
     },
   ];
