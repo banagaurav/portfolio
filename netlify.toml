@@ -1,24 +1,23 @@
 [build]
   command = "cd front && npm install && npm run build"
-  publish = "front/.next"
+  publish = "front/out"
 
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
 
-# Handle client-side routing
+# Next.js specific configuration
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200[build]
-  command = "cd front && npm install && npm run build"
-  publish = "front/.next"
+  from = "/_next/static/*"
+  to = "/_next/static/:splat"
+  status = 200
 
-[build.environment]
-  NODE_VERSION = "18"
-  NPM_FLAGS = "--legacy-peer-deps"
+[[redirects]]
+  from = "/_next/image/*"
+  to = "/_next/image/:splat"
+  status = 200
 
-# Handle client-side routing
+# Handle client-side routing - this should be last
 [[redirects]]
   from = "/*"
   to = "/index.html"
