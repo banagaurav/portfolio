@@ -5,13 +5,7 @@ import FooterMedias from "./FooterMedias";
 
 const FooterContains = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        padding: "20px",
-      }}
-    >
+    <div className="flex justify-around p-5">
       <FooterAboutMe />
       <FooterContacts />
       <FooterMedias />

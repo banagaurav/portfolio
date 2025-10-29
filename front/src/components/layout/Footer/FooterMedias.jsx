@@ -30,13 +30,7 @@ const FooterMedias = () => {
 
   return (
     <div>
-      <p
-        style={{
-          fontFamily: "Noto Sans Georgian",
-          color: "#FEBE0D",
-          fontSize: "16px",
-        }}
-      >
+      <p className="font-noto-sans-georgian text-[#FEBE0D] text-[16px] pl-1">
         Socials :
       </p>
       <div style={{ display: "flex", gap: "10px" }}>

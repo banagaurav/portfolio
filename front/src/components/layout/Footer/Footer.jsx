@@ -4,15 +4,7 @@ import FooterContains from "./FooterContains";
 const Footer = () => {
   return (
     <div className="h-50">
-      <hr
-        style={{
-          fontFamily: "Noto Sans Georgian",
-          color: "#FEBE0D",
-          fontSize: "16px",
-          marginLeft: "120px",
-          marginRight: "120px",
-        }}
-      />
+      <hr className="border-t border-t-[#FEBE0D] ml-[120px] mr-[120px] mb-0.5" />
       <FooterContains />
     </div>
   );
