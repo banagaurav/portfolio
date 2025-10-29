@@ -4,4 +4,14 @@ export const LOCATION = {
     DATABASE: 'DATABASE',
     TOOLS: 'TOOLS',
     DATA: 'DATA',
+    PROJECT: 'PROJECT',
 };
+
+export const SECTION ={
+    HOME: 'HOME',
+    TOOLS: 'TOOLS',
+    FRONTEND: 'FRONTEND',
+    BACKEND: 'BACKEND',
+    DATABASE: 'DATABASE',
+    DATA: 'DATA',
+}

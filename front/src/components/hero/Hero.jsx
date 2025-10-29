@@ -7,8 +7,9 @@ import DataSection from "../dataSection/DataSection";
 import DatabaseSection from "../databaseSection/DatabaseSection";
 import ResumeSection from "../resume-section/ResumeSection";
 import ProjectsSection from "../projects-section/ProjectsSection";
-import PortfolioNav from "../menu/PortfolioNav";
+import PortfolioNav from "../menu/PortfolioNav"; // Import the nav
 import HeroSection from "./HeroSection";
+import { SECTION } from "@/app/constant";
 
 const Hero = () => {
   return (
@@ -24,23 +25,23 @@ const Hero = () => {
         </section>
 
         {/* About Section - You can place your tools/skills here */}
-        <section id="tools">
+        <section id={SECTION.TOOLS}>
           <Tools />
         </section>
-        <section id="frontend">
+        <section id={SECTION.FRONTEND}>
           <FrontendSection />
         </section>
-        <section id="backend">
+        <section id={SECTION.BACKEND}>
           <BackendSection />
         </section>
-        <section id="database">
+        <section id={SECTION.DATABASE}>
           <DatabaseSection />
         </section>
-        <section id="data">
+        <section id={SECTION.DATA}>
           <DataSection />
         </section>
         {/* Projects Section */}
-        <section id="projects">
+        <section id={SECTION.PROJECTS}>
           <ProjectsSection />
         </section>
 
