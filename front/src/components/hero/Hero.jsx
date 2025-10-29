@@ -6,10 +6,12 @@ import DataSection from "../dataSection/DataSection";
 import DatabaseSection from "../databaseSection/DatabaseSection";
 import ResumeSection from "../resume-section/ResumeSection";
 import ProjectsSection from "../projects-section/ProjectsSection";
+import IntroSection from "../introSection/IntroSection";
 
 const Hero = () => {
   return (
     <div className="border border-gray-400 grid flex-row justify-center gap-10 py-20 px-20 flex-wrap  ">
+      <IntroSection />
       <Tools />
       <FrontendSection />
       <DatabaseSection />

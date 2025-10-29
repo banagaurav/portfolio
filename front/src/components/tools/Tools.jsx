@@ -8,12 +8,12 @@ const Tools = () => {
   return (
     <div className="border border-gray-400 flex ">
       <div className="flex-1">
-        <div className="flex flex-row items-center gap-4">
+        <div className="flex flex-row items-center gap-4 pb-12">
           <Image src={Figma} alt="Figma.img" />
           <p className="text-figma text-2xl">Figma</p>
         </div>
 
-        <p className="text-white text-base mt-28 ">
+        <p className="text-[#FEBE0D] text-base mt-28 ">
           I use Figma to design my projects before coding. It helps me plan
           layouts, create prototypes, and establish visual style. This blueprint
           phase ensures I build polished, user-friendly interfaces efficiently
