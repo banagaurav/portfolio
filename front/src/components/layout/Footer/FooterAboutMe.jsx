@@ -32,7 +32,7 @@ const FooterAboutMe = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        View Resume :
+        View Resume
       </p>
     </div>
   );
