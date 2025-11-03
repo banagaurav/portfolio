@@ -14,4 +14,5 @@ export const SECTION ={
     BACKEND: 'BACKEND',
     DATABASE: 'DATABASE',
     DATA: 'DATA',
+    PROJECTS: 'PROJECTS',
 }

@@ -1,4 +1,7 @@
 "use client";
+
+import { SECTION } from "@/app/constant";
+
 const { Home, Box, ArrowUp } = require("lucide-react");
 
 const PortfolioNav = () => {
@@ -25,7 +28,7 @@ const PortfolioNav = () => {
         </button>
 
         <button
-          onClick={() => scrollToSection("projects")}
+          onClick={() => scrollToSection(SECTION.PROJECTS)}
           className="h-12 w-12 rounded-xl hover:bg-[hsl(var(--nav-active-bg))] text-[hsl(var(--nav-item))] hover:text-[hsl(var(--nav-item-hover))] transition-all flex items-center justify-center"
           aria-label="Projects"
         >
