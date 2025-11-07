@@ -41,7 +41,7 @@ const ProjectsSection = () => {
       id={SECTION.PROJECTS}
       className="py-24 px-6 md:px-20 bg-transparent text-white"
     >
-      <div ref={sectionRef} className="max-w-7xl mx-auto border border-red-500">
+      <div ref={sectionRef} className="max-w-7xl mx-auto ">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#FEBE0D]">
