@@ -10,14 +10,14 @@ const HeroSection = () => {
       id="home"
       className="min-h-screen flex items-center justify-center pt-16 pb-24 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-14xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-30 items-center">
           {/* Text Content */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 ">
             <div className="overflow-hidden">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
                 <span className="block fade-in-up animation-delay-100">
-                  Hi, I'm{" "}
+                  Hi, I'm <br />
                   <span className="text-[#FEBE0D] color-shift bg-gradient-to-r from-[#FEBE0D] via-[#ffd43b] to-[#FEBE0D] bg-clip-text text-transparent bg-size-200">
                     Gaurav Raj Bana
                   </span>
@@ -57,7 +57,7 @@ const HeroSection = () => {
           </div>
 
           {/* Image Content */}
-          <div className="order-1 lg:order-2 flex justify-center">
+          <div className="order-1 lg:order-2 flex justify-center pl-10">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 float-animation glow-pulse">
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#FEBE0D] shadow-lg pulse-gentle">
                 <Image
